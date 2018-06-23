@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="Manually" manifestLocation="lib/slf4j-1.7.25/log4j-over-slf4j/src/main/resources/META-INF/MANIFEST.MF" jarfileLocation="school-java-course-design.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="Manually" manifestLocation="resources/META-INF/MANIFEST.MF" jarfileLocation="school-java-course-design.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties />
         <additionalJARContents />
       </configuration>
@@ -16,9 +16,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite-jdbc-3.23.1" level="project" />
-    <orderEntry type="library" name="slf4j-1.7.25" level="project" />
-    <orderEntry type="library" name="hamcrest-core-1.3" level="project" />
-    <orderEntry type="library" name="junit-4.12" level="project" />
     <orderEntry type="library" name="mybatis-3.4.6" level="project" />
     <orderEntry type="library" name="SwingSets3(BeautyEyeLNFDemo)" level="project" />
     <orderEntry type="module" module-name="QFrameworkCore" exported="" />
