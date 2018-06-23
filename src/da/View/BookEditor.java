@@ -24,7 +24,7 @@ public class BookEditor {
     public BookEditor(int id) {
         JFrame frame = new JFrame("BookEditor");
         frame.setContentPane(PanelMain);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -55,7 +55,7 @@ public class BookEditor {
                 int k = Database.getBookMapper().update(modifyBook);
                 System.out.println(k);
                 if (k == 1) {
-                    showMessageDialog(null, " 修改图书信息成功！ ", " ok", OK_OPTION);
+                    showMessageDialog(null, " 修改图书信息成功！ ", " ok", PLAIN_MESSAGE);
                 }
             }
         });
