@@ -21,7 +21,7 @@ import org.apache.ibatis.session.SqlSession;
 public class Login {
     private JFrame frame;
     private JTextField usernameTxt;
-    private JTextField passwordTxt;
+    private JPasswordField passwordTxt;
     private JButton logInButton;
     private JButton signUpButton;
     private JButton forgotPasswordButton;

@@ -78,7 +78,7 @@
           <text value="hello"/>
         </properties>
       </component>
-      <component id="88789" class="javax.swing.JTextField" binding="passwordTxt">
+      <component id="67401" class="javax.swing.JPasswordField" binding="passwordTxt">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
