@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="da.Config.UserMappers">
+    <!-- 根据id查询一个User对象 -->
+    <select id="getUser" parameterType="int" resultType="da.Model.User">
+        select * from main.User where id=#{id}
+    </select>
+    <select id="getUserAll" resultType="da.Model.User">
+        select * from main.User
+    </select>
+
+    <!-- 插入一个User对象 -->
+    <insert id="insertUser" parameterType="da.Model.User">
+        insert into main.User (name, password) values (#{name}, #{password})
+    </insert>
+
+    <!-- 删除一个User对象 -->
+    <delete id="deleteUser" parameterType="int">
+        delete from main.User where id=#{id}
+    </delete>
+
+    <!-- 更新一个User对象-->
+    <update id="updateUser" parameterType="da.Model.User">
+        update main.User set name=#{name}, password=#{password} where id=#{id}
+    </update>
+</mapper>
