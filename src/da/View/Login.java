@@ -2,16 +2,21 @@ package da.View;
 
 import javax.sound.midi.Soundbank;
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
+import java.util.Enumeration;
 
 import com.sun.org.apache.bcel.internal.generic.IUSHR;
 import da.Model.IUserMapper;
 import da.Model.User;
 import da.Util.Desktop;
 import da.Util.Desktop.*;
+import da.Util.OSinfo;
 import org.apache.ibatis.session.SqlSession;
+import sun.awt.OSInfo;
 
 /**
  * todo 实现找回密码功能
@@ -63,7 +68,6 @@ public class Login {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 new SignUp();
-//                SignUp.main(new String[]{});
             }
         });
         logInButton.addActionListener(new ActionListener() {
@@ -85,6 +89,24 @@ public class Login {
         return this.frame;
     }
 
+    /**
+     * 加载全局字体
+     *
+     * @param font
+     */
+    private static void InitGlobalFont(Font font) {
+        FontUIResource fontRes = new FontUIResource(font);
+        for (Enumeration<Object> keys = UIManager.getDefaults().keys();
+             keys.hasMoreElements(); ) {
+            Object key = keys.nextElement();
+            Object value = UIManager.get(key);
+            if (value instanceof FontUIResource) {
+                UIManager.put(key, fontRes);
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
         try {
             org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
@@ -92,5 +114,11 @@ public class Login {
             System.err.println(e.getMessage());
         }
         new Login();
+        if (OSinfo.isWindows()) {
+            InitGlobalFont(new Font("Microsoft YaHei", Font.PLAIN, 16));
+        }
+        if (OSinfo.isLinux()) {
+            InitGlobalFont(new Font("TSCu_Comic", Font.PLAIN, 16));
+        }
     }
 }

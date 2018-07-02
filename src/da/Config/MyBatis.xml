@@ -12,10 +12,7 @@
                 <property name="username" value="${username}"/>
                 <property name="password" value="${password}"/>
             </dataSource>
-
-
         </environment>
-
     </environments>
 
     <mappers>
@@ -27,5 +24,4 @@
         <mapper class="da.Model.IBookMapper"/>
         <mapper class="da.Model.IBorrowMapper"/>
     </mappers>
-
 </configuration>

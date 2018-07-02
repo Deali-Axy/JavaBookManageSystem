@@ -1,11 +1,11 @@
 # Database
 ## User
-
-|  field   | type | help_text | constraint  | length |
-| -------- | ---- | --------- | ----------- | ------ |
-| id       | int  |           | primary-key |        |
-| name     | char |           |             | 20     |
-| password | char |           |             | 200    |
+|  field   |  type   | help_text | constraint  | length |
+| -------- | ------- | --------- | ----------- | ------ |
+| id       | int     |           | primary-key |        |
+| name     | char    |           |             | 20     |
+| password | char    |           |             | 200    |
+| admin    | boolean |           |             |        |
 
 
 ## Book
@@ -20,8 +20,9 @@
 | ISBN             | char     |           |             | 20     |
 
 ## Borrowing
-| field | type | help_text |      constraint       | length |
-| ----- | ---- | --------- | --------------------- | ------ |
-| id    | int  |           | primary-key           |        |
-| book  | int  |           | foregin-key to `Book` |        |
-| user  | int  |           | foregin-key to `User` |        |
+|  field  | type | help_text |      constraint       | length |
+| ------- | ---- | --------- | --------------------- | ------ |
+| id      | int  |           | primary-key           |        |
+| book_id | int  |           | foregin-key to `Book` |        |
+| user_id | int  |           | foregin-key to `User` |        |
+| date    | date |           |                       |        |

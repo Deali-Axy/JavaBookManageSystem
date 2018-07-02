@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface IBookMapper {
-    //    @Insert("insert into User (name, password) values ('${name}', '${password}')")
     @Insert("insert into book (name, author, publisher, publication_date, pages, ISBN) " +
             "values (#{name}, #{author}, #{publisher}, #{publication_date}, #{pages}, #{ISBN})")
     int add(Book user);

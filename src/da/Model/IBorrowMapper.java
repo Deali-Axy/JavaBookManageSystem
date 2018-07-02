@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface IBorrowMapper {
-    //    @Insert("insert into User (name, password) values ('${name}', '${password}')")
     @Insert("insert into Borrow (user_id, book_id, date) values (#{user_id}, #{book_id}, #{date})")
     int add(Borrow borrow);
 

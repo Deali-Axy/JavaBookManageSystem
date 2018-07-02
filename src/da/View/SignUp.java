@@ -19,7 +19,7 @@ public class SignUp {
     public SignUp() {
         frame = new JFrame("SignUp");
         frame.setContentPane(PanelMain);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(500, 300);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
