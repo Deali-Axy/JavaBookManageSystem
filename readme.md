@@ -37,3 +37,12 @@
 | book_id | int  |           | foregin-key to `Book` |        |
 | user_id | int  |           | foregin-key to `User` |        |
 | date    | date |           |                       |        |
+
+## 截图
+![登录界面](https://upload-images.jianshu.io/upload_images/8869373-c8b6b92aa54a6ad5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![用户中心](https://upload-images.jianshu.io/upload_images/8869373-923777bb29cc17d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![藏书列表](https://upload-images.jianshu.io/upload_images/8869373-3cc0c3d6f408ac37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![图书信息编辑](https://upload-images.jianshu.io/upload_images/8869373-52bf17cfb859202e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

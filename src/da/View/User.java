@@ -48,7 +48,7 @@ public class User {
         frame.setSize(650, 700);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        bookList.setBorder(BorderFactory.createTitledBorder("借阅记录"));
+        bookList.setBorder(BorderFactory.createTitledBorder("Borrowed History"));
 
         this.login = login;
         user_id = id;

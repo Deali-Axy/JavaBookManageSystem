@@ -16,6 +16,8 @@ import da.Util.Desktop;
 import da.Util.Desktop.*;
 import da.Util.OSinfo;
 import org.apache.ibatis.session.SqlSession;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
+import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 import sun.awt.OSInfo;
 
 /**
@@ -46,30 +48,43 @@ public class Login {
 
         SqlSession sqlSession = da.Config.Database.getSqlSession();
 
+        userGuideButton.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.green));
+        userGuideButton.setForeground(Color.white);
         userGuideButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Desktop.OpenBrowser("http://blog.deali.cn");
             }
         });
+
+        aboutButton.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));
+        aboutButton.setForeground(Color.white);
         aboutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Desktop.OpenBrowser("http://blog.deali.cn");
             }
         });
+
+        forgotPasswordButton.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.red));
+        forgotPasswordButton.setForeground(Color.white);
         forgotPasswordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
             }
         });
+
+        signUpButton.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.blue));
+        signUpButton.setForeground(Color.white);
         signUpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 new SignUp();
             }
         });
+
+        logInButton.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.normal));
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -109,17 +124,26 @@ public class Login {
 
     public static void main(String[] args) {
         try {
-            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+            // 如何开启/关闭窗口在不活动时的半透明效果? 设置此开关量为false即表示关闭之，BeautyEye LNF中默认是true
+            BeautyEyeLNFHelper.translucencyAtFrameInactive = false;
+            // 弱立体感半透明的边框效果
+            BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencySmallShadow;
+            BeautyEyeLNFHelper.launchBeautyEyeLNF();
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
-        if (OSinfo.isWindows()) {
+        // 隐藏设置按钮
+        UIManager.put("RootPane.setupButtonVisible", false);
+
+
+        // 多系统字体适配
+        if (OSinfo.isWindows())
             InitGlobalFont(new Font("Microsoft YaHei", Font.PLAIN, 16));
-        }
-        if (OSinfo.isLinux()) {
-            InitGlobalFont(new Font("Wenquan Yi Micro Hei", Font.PLAIN, 16));
-        }
+        if (OSinfo.isLinux())
+            InitGlobalFont(new Font("Noto Sans Mono CJK SC Regular", Font.PLAIN, 16));    //
+        if (OSinfo.isMacOS())
+            InitGlobalFont(new Font("STXihei", Font.PLAIN, 16));    // 华文细黑
 
         new Login();
     }
